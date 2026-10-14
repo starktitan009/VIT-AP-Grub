@@ -1,0 +1,6 @@
+{
+  "name": "VIT AP Grub",
+  "description": "Campus mess menu, food reviews, delivery services, and eatery hub for VIT-AP University.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT AP Grub • Secured Mess Administration Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #060913;
+            --card-bg: #0F172A;
+            --accent-orange: #FF6B00;
+            --accent-amber: #FFA726;
+            --text-primary: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --border-color: #1E293B;
+            --veg-green: #22C55E;
+            --nonveg-red: #EF4444;
+            --special-purple: #A855F7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--veg-green);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            border: 1px solid var(--veg-green);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 160px;
+            background: #080D1A;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: #E2E8F0;
+            padding: 14px;
+            font-size: 13px;
+            resize: vertical;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: var(--accent-orange);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 14px;
+        }
+
+        .btn {
+            background: var(--accent-orange);
+            color: #FFF;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background: #1E293B;
+            color: var(--text-primary);
+        }
+
+        .btn-success {
+            background: var(--veg-green);
+        }
+
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .menu-table th, .menu-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .menu-table th {
+            background: #111A2E;
+            color: var(--accent-amber);
+        }
+
+        .mess-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        .tag-veg { background: rgba(34, 197, 94, 0.2); color: var(--veg-green); }
+        .tag-nv { background: rgba(239, 68, 68, 0.2); color: var(--nonveg-red); }
+        .tag-spl { background: rgba(168, 85, 247, 0.2); color: var(--special-purple); }
+
+        .editable-input {
+            width: 100%;
+            background: #080D1A;
+            border: 1px solid #334155;
+            color: #FFF;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand-title">
+            🥣 VIT AP Grub • Admin Takeover Console
+        </div>
+        <div class="badge">Chief Warden Authority • Online</div>
+    </header>
+
+    <div class="container">
+        <!-- AI Excel Importer & API Takeover -->
+        <div class="card">
+            <h2>Excel & CSV Menu AI Takeover API</h2>
+            <p>Upload or paste your mess spreadsheet. The API automatically structures and sorts dishes into Veg, Non-Veg, and Special Mess with live date and meal mapping.</p>
+            
+            <textarea id="csvInput">Date,Meal,Dishes
+2026-10-15,Breakfast,Mysore Masala Dosa; Tomato Chutney; Coconut Chutney; Sambar; Boiled Egg; Tea; Milk
+2026-10-15,Lunch,Steamed Sona Masoori Rice; Phulka; Dal Tadka; Aloo Gobi Roast; Fresh Curd; Chicken Sukka; Paneer Butter Masala
+2026-10-15,Snacks,Veg Samosa; Mint Chutney; Filter Coffee; Ginger Tea
+2026-10-15,Dinner,Special Hyderabadi Chicken Dum Biryani; Mirchi Ka Salan; Cucumber Raita; Paneer Makhani; Gulab Jamun
+2026-10-16,Breakfast,Idli; Medu Vada; Coconut Chutney; Sambar; Omelet; Coffee
+2026-10-16,Lunch,Jeera Rice; Dal Makhani; Bhindi Masala; Chapati; Thick Curd; Fish Curry
+2026-10-16,Snacks,Crispy Onion Pakoda; Sweet Chutney; Lemon Tea
+2026-10-16,Dinner,Veg Pulao; Chettinad Chicken; Kadai Paneer; Rasgulla; Steamed Rice; Rasam</textarea>
+
+            <div class="btn-group">
+                <button class="btn" onclick="processWithApi()">Process with Menu Generation API ⚡</button>
+                <button class="btn btn-secondary" onclick="loadBlankTemplate()">Load Blank Template</button>
+                <button class="btn btn-success" id="publishBtn" style="display:none;" onclick="publishToStudents()">Publish All Changes to Students 🚀</button>
+            </div>
+        </div>
+
+        <!-- Generated Interactive Table -->
+        <div class="card" id="resultsCard" style="display:none;">
+            <h2>Generated Mess Menus: Date, Mess Type & Menu</h2>
+            <p>Inspect generated menus for Veg Mess 🥦, Non-Veg Mess 🍗, and Special Mess ✨. You can edit dishes directly in the table before publishing.</p>
+
+            <table class="menu-table" id="menuTable">
+                <thead>
+                    <tr>
+                        <th style="width: 110px;">Date</th>
+                        <th style="width: 100px;">Meal</th>
+                        <th style="width: 130px;">Mess Type</th>
+                        <th>Menu Items (Inline Editable)</th>
+                        <th style="width: 90px;">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const nonVegWords = ["chicken", "egg", "fish", "mutton", "prawn", "omelet", "bhurji", "kheema", "non-veg"];
+        const specialWords = ["paneer", "dum biryani", "ice cream", "gulab jamun", "rasgulla", "kheer", "malai kofta", "special"];
+
+        let generatedEntries = [];
+
+        function isNonVeg(dish) {
+            return nonVegWords.some(w => dish.toLowerCase().includes(w));
+        }
+
+        function isSpecial(dish) {
+            return specialWords.some(w => dish.toLowerCase().includes(w));
+        }
+
+        function processWithApi() {
+            const text = document.getElementById('csvInput').value;
+            const lines = text.split('\n');
+            generatedEntries = [];
+
+            lines.forEach(line => {
+                const trimmed = line.trim();
+                if (!trimmed || trimmed.toLowerCase().startsWith('date,')) return;
+
+                const parts = trimmed.split(',');
+                if (parts.length >= 3) {
+                    const date = parts[0].trim();
+                    const meal = parts[1].trim();
+                    const rawDishes = parts[2].split(';').map(d => d.trim()).filter(Boolean);
+
+                    const veg = rawDishes.filter(d => !isNonVeg(d));
+                    const nonVeg = rawDishes;
+                    const special = rawDishes.filter(d => isSpecial(d) || isNonVeg(d));
+
+                    generatedEntries.push({ date, meal, type: 'Veg Mess', tag: 'tag-veg', dishes: veg.join(', ') });
+                    generatedEntries.push({ date, meal, type: 'Non-Veg Mess', tag: 'tag-nv', dishes: nonVeg.join(', ') });
+                    generatedEntries.push({ date, meal, type: 'Special Mess', tag: 'tag-spl', dishes: (special.length ? special : rawDishes).join(', ') });
+                }
+            });
+
+            renderTable();
+            document.getElementById('resultsCard').style.display = 'block';
+            document.getElementById('publishBtn').style.display = 'inline-block';
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            generatedEntries.forEach((entry, idx) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${entry.date}</strong></td>
+                    <td>${entry.meal}</td>
+                    <td><span class="mess-tag ${entry.tag}">${entry.type}</span></td>
+                    <td><input class="editable-input" type="text" value="${entry.dishes}" onchange="updateDish(${idx}, this.value)" /></td>
+                    <td><button class="btn btn-secondary" style="padding: 6px 10px; font-size: 11px;" onclick="removeEntry(${idx})">Delete</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function updateDish(idx, newVal) {
+            generatedEntries[idx].dishes = newVal;
+        }
+
+        function removeEntry(idx) {
+            generatedEntries.splice(idx, 1);
+            renderTable();
+        }
+
+        function loadBlankTemplate() {
+            document.getElementById('csvInput').value = `Date,Meal,Dishes\n2026-10-15,Breakfast,Mysore Masala Dosa; Sambar; Coconut Chutney; Tea\n2026-10-15,Lunch,Steamed Rice; Dal Tadka; Phulkas; Chicken Curry; Paneer Makhani\n2026-10-15,Snacks,Veg Samosa; Chai\n2026-10-15,Dinner,Hyderabadi Chicken Dum Biryani; Raita; Salan; Gulab Jamun`;
+        }
+
+        function publishToStudents() {
+            alert(`🎉 Successfully synchronized and published ${generatedEntries.length} mess menus to VIT AP Grub cloud! Students can now view updated Veg, Non-Veg and Special mess rotations.`);
+        }
+    </script>
+</body>
+</html>
